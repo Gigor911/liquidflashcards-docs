@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkliquidflashcards_docs=self.webpackChunkliquidflashcards_docs||[]).push([[5921],{8521(s){s.exports=JSON.parse('{"name":"docs-kit-theme","id":"default"}')}}]);

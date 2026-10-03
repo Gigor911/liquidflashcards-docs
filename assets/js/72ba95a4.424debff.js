@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkliquidflashcards_docs=self.webpackChunkliquidflashcards_docs||[]).push([[6550],{6323(s){s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"decisions"}')}}]);

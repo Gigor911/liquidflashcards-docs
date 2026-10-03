@@ -1,0 +1,238 @@
+/* Liquid Flash Cards — Glass Momentum, a static web rendition of the SwiftUI components.
+   Hand-written from LiquidFlashCards/Shared/Components/*.swift and the Glass Momentum comps.
+   Every colour, radius and size is a token from tokens.css. */
+
+.lfc, .lfc * { box-sizing: border-box; }
+.lfc { font-family: var(--font-sans); color: var(--textPrimary); -webkit-font-smoothing: antialiased; }
+.lfc button { font: inherit; cursor: pointer; }
+.lfc :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.lfc .num { font-variant-numeric: tabular-nums; }
+
+/* GlassField: base + three soft glows (GlassMomentum.swift) */
+.lfc-field {
+  background-color: var(--glassFieldBase);
+  background-image:
+    radial-gradient(circle at 10% 6%, var(--glassGlowA) 0, transparent 55%),
+    radial-gradient(circle at 95% 32%, var(--glassGlowB) 0, transparent 50%),
+    radial-gradient(circle at 25% 96%, var(--glassGlowC) 0, transparent 60%);
+}
+
+/* glassCard(): material + glassFill + 1px glassEdge + soft shadow */
+.lfc-glass {
+  background: var(--glassFill);
+  -webkit-backdrop-filter: blur(var(--blur-glass)) saturate(1.2);
+  backdrop-filter: blur(var(--blur-glass)) saturate(1.2);
+  border: 1px solid var(--glassEdge);
+  box-shadow: var(--shadow-glass);
+  border-radius: var(--radius-card);
+}
+.lfc-glass.hero { border-radius: var(--radius-hero); padding: var(--heroCardPadding); }
+.lfc-glass.solid { background: var(--listCardBG); -webkit-backdrop-filter: none; backdrop-filter: none; } /* Reduce Transparency */
+@media (prefers-reduced-transparency: reduce) {
+  .lfc-glass { background: var(--listCardBG); -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+
+/* GlassGroup + GlassRowDivider */
+.lfc-group { border-radius: var(--radius-group); padding: var(--glassGroupVerticalPadding) var(--rowContentPadding); }
+.lfc-group > .lfc-row + .lfc-row { border-top: 1px solid var(--glassHairline); }
+
+/* GlassSectionLabel */
+.lfc-section-label {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin: 0 4px 8px; font-size: 13px; line-height: 18px; font-weight: 700; letter-spacing: .5px;
+  text-transform: uppercase; color: var(--textSecondary);
+}
+.lfc-section-label a { font-size: 14px; font-weight: 600; letter-spacing: 0; text-transform: none; text-decoration: none; color: var(--accent); }
+.lfc a { color: var(--accent); }
+.lfc a:hover { color: var(--accentDeep); }
+
+/* GlassPageHeader */
+.lfc-page-header { display: flex; align-items: center; gap: 12px; }
+.lfc-page-header .titles { flex: 1; min-width: 0; }
+.lfc-page-header .eyebrow { font-size: 14px; line-height: 19px; color: var(--textSecondary); }
+.lfc-page-header h1 { margin: 0; font-size: 34px; line-height: 41px; font-weight: 700; letter-spacing: -.5px; }
+.lfc-page-header.has-eyebrow h1 { margin-top: 2px; font-size: 30px; line-height: 36px; letter-spacing: -.4px; }
+.lfc-page-header .actions { display: flex; gap: 8px; }
+
+/* Buttons: PrimaryCTAButton / SecondaryCTAButton — sentence-case capsules */
+.lfc-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; min-height: var(--ctaHeight); padding: 0 24px; border: 0; border-radius: var(--radius-pill);
+  font-size: 17px; line-height: 22px; font-weight: 700;
+  transition: transform .16s ease-out, opacity .16s ease-out;
+}
+.lfc-btn:active { transform: scale(.97); }
+.lfc-btn:disabled { opacity: var(--opacity-disabled); cursor: default; transform: none; }
+.lfc-btn.primary { background: var(--ctaFill); color: var(--textOnAccent); box-shadow: var(--shadow-cta); }
+.lfc-btn.secondary {
+  min-height: var(--ctaSecondaryHeight); font-size: 16px; line-height: 21px; color: var(--accent);
+  background: var(--glassFill); border: 1px solid var(--glassEdge); box-shadow: var(--shadow-glass);
+  -webkit-backdrop-filter: blur(var(--blur-glass)); backdrop-filter: blur(var(--blur-glass));
+}
+.lfc-btn .key { font-size: 11px; font-weight: 600; padding: 3px 7px; border-radius: var(--radius-key); background: rgba(255,255,255,.2); }
+.lfc-btn svg { width: 20px; height: 20px; }
+.lfc-link-line { margin-top: 10px; text-align: center; font-size: 14px; font-weight: 600; color: var(--accent); }
+
+/* GlassCircleButton: 44pt glass circle */
+.lfc-circle {
+  width: var(--glassCircleSize); height: var(--glassCircleSize); border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center; padding: 0;
+  color: var(--textPrimary); transition: transform .16s ease-out, opacity .16s ease-out;
+}
+.lfc-circle:active { transform: scale(.94); opacity: var(--opacity-glass-press); }
+.lfc-circle svg { width: 18px; height: 18px; }
+
+/* FloatingAddButton */
+.lfc-fab {
+  width: var(--fabSize); height: var(--fabSize); border-radius: 50%; border: 0; padding: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--ctaFill); color: var(--textOnAccent); box-shadow: var(--shadow-cta);
+}
+.lfc-fab svg { width: 24px; height: 24px; }
+
+/* StreakChip */
+.lfc-streak {
+  display: inline-flex; align-items: center; gap: 6px; padding: 9px 14px; border-radius: var(--radius-field);
+  color: var(--accent); font-size: 16px; line-height: 21px; font-weight: 700;
+}
+.lfc-streak svg { width: 18px; height: 18px; }
+
+/* DueCountBadge */
+.lfc-badge {
+  display: inline-block; padding: 4px 10px; border-radius: var(--radius-pill);
+  background: var(--accent); color: var(--textOnAccent); font-size: 13px; line-height: 18px; font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Phase / status pill (tinted glass) */
+.lfc-pill { display: inline-block; padding: 3px 10px; border-radius: var(--radius-pill); font-size: 12px; line-height: 16px; font-weight: 700; }
+.lfc-pill.again { background: var(--ratingAgainTint); color: var(--ratingAgainInk); }
+.lfc-pill.hard { background: var(--ratingHardTint); color: var(--ratingHardInk); }
+.lfc-pill.good { background: var(--ratingGoodTint); color: var(--ratingGoodInk); }
+.lfc-pill.easy { background: var(--ratingEasyTint); color: var(--ratingEasyInk); }
+
+/* GlassIconTile / DeckAvatarView */
+.lfc-tile {
+  width: var(--iconTileSize); height: var(--iconTileSize); flex-shrink: 0; border-radius: var(--radius-tile);
+  display: inline-flex; align-items: center; justify-content: center; background: var(--ringTrack); color: var(--accent);
+}
+.lfc-tile svg { width: 20px; height: 20px; }
+.lfc-tile.large { width: var(--emptyIconTileSize); height: var(--emptyIconTileSize); border-radius: 20px; }
+.lfc-tile.large svg { width: 30px; height: 30px; }
+
+/* Deck row */
+.lfc-row { display: flex; align-items: center; gap: var(--rowHStackSpacing); padding: var(--rowVerticalPadding) 0; min-height: var(--minTapTarget); }
+.lfc-row .text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: var(--rowTextStackSpacing); }
+.lfc-row .title { font-size: 16px; line-height: 21px; font-weight: 600; }
+.lfc-row .subtitle { font-size: 13px; line-height: 18px; color: var(--textSecondary); }
+.lfc-row .chev { color: var(--textSecondary); width: 14px; height: 14px; }
+
+/* Rings (MomentumRings, MiniRing) — SVG strokes */
+.lfc-ring .track { fill: none; stroke: var(--ringTrack); }
+.lfc-ring .goal { fill: none; stroke: var(--accent); stroke-linecap: round; }
+.lfc-ring .recall-track { fill: none; stroke: var(--recallTrack); }
+.lfc-ring .recall { fill: none; stroke: var(--recallAccent); stroke-linecap: round; }
+
+/* ValueWithUnit */
+.lfc-figure { font-size: 26px; line-height: 31px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.lfc-figure .unit { font-size: 16px; font-weight: 500; color: var(--textSecondary); }
+.lfc-figure-caption { font-size: 13px; line-height: 18px; font-weight: 700; color: var(--accent); }
+.lfc-figure-caption.recall { color: var(--recallAccent); }
+
+/* WeekStrip */
+.lfc-week { display: flex; justify-content: space-between; padding: 14px 18px; }
+.lfc-week .day { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; }
+.lfc-week .letter { font-size: 12px; line-height: 16px; color: var(--textSecondary); }
+.lfc-week .today .letter { color: var(--accent); font-weight: 700; }
+.lfc-week .mark { width: var(--weekMarkerSize); height: var(--weekMarkerSize); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--ringTrack); }
+.lfc-week .met .mark { background: var(--accent); border-color: var(--accent); color: var(--textOnAccent); }
+.lfc-week .today .mark { background: var(--ringTrack); border-color: var(--accent); }
+.lfc-week .future .mark { border: 2px dashed var(--forecastDim); }
+.lfc-week .studied .mark { border-color: var(--accent); }
+.lfc-week .studied .mark::after { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+.lfc-week .mark svg { width: 16px; height: 16px; }
+
+/* ForecastBars */
+.lfc-forecast { display: flex; align-items: flex-end; gap: 4px; padding: 14px 12px 12px; }
+.lfc-forecast .col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 12px; line-height: 16px; color: var(--textSecondary); font-variant-numeric: tabular-nums; }
+.lfc-forecast .bar { width: var(--forecastBarWidth); border-radius: var(--radius-bar); background: var(--forecastDim); min-height: 6px; }
+.lfc-forecast .today .bar { background: var(--accent); }
+.lfc-forecast .today .label { font-weight: 700; }
+
+/* SegmentedFilterTabs: glass capsule track, accent capsule selection */
+.lfc-segmented { display: flex; height: var(--minTapTarget); padding: 4px; border-radius: var(--radius-control); }
+.lfc-segmented button {
+  flex: 1; border: 0; background: transparent; border-radius: var(--radius-pill); color: var(--textPrimary);
+  font-size: 16px; font-weight: 600;
+}
+.lfc-segmented button[aria-pressed="true"] { background: var(--accent); color: var(--textOnAccent); font-weight: 700; }
+
+/* Floating glass tab bar (comps) + search circle */
+.lfc-tabbar-wrap { display: flex; gap: 10px; align-items: center; }
+.lfc-tabbar { flex: 1; display: flex; justify-content: space-around; padding: 6px; border-radius: var(--radius-tabbar); }
+.lfc-tabbar button {
+  display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 58px;
+  border: 0; background: transparent; color: var(--textSecondary); padding: 6px 12px; border-radius: 22px;
+  font-size: 10px; line-height: 12px; font-weight: 600;
+}
+.lfc-tabbar button[aria-current="page"] { background: var(--ringTrack); color: var(--accent); }
+.lfc-tabbar svg { width: 21px; height: 21px; }
+.lfc-search-tab { width: var(--fabSize); height: var(--fabSize); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--textSecondary); padding: 0; }
+.lfc-search-tab svg { width: 22px; height: 22px; }
+
+/* RatingBar: four tinted glass buttons with ink labels and FSRS intervals */
+.lfc-rating { display: flex; gap: var(--ratingBarSpacing); }
+.lfc-rating button {
+  flex: 1; height: var(--ratingButtonHeight); border-radius: var(--radius-group); border: 1px solid var(--glassEdge);
+  -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  transition: transform .16s ease-out;
+}
+.lfc-rating button:active { transform: scale(.97); }
+.lfc-rating .label { font-size: 16px; line-height: 21px; font-weight: 700; }
+.lfc-rating .interval { font-size: 12px; line-height: 16px; opacity: .85; }
+.lfc-rating .again { background: var(--ratingAgainTint); color: var(--ratingAgainInk); }
+.lfc-rating .hard { background: var(--ratingHardTint); color: var(--ratingHardInk); }
+.lfc-rating .good { background: var(--ratingGoodTint); color: var(--ratingGoodInk); }
+.lfc-rating .easy { background: var(--ratingEasyTint); color: var(--ratingEasyInk); }
+
+/* Study card (GlassStudyCard) + session progress */
+.lfc-session { display: flex; gap: 3px; padding: 12px 14px; border-radius: 22px; flex: 1; }
+.lfc-session i { flex: 1; height: 5px; border-radius: 3px; background: var(--ringTrack); }
+.lfc-session i.done { background: var(--accent); }
+.lfc-study { position: relative; }
+.lfc-study .behind { position: absolute; left: 20px; right: 20px; top: 20px; bottom: -14px; border-radius: var(--radius-study); opacity: var(--opacity-stack-behind); }
+.lfc-study .card { position: relative; border-radius: var(--radius-study); padding: var(--studyCardPadding); display: flex; flex-direction: column; }
+.lfc-study .side { font-size: 12px; line-height: 16px; font-weight: 700; letter-spacing: 1.2px; color: var(--textSecondary); }
+.lfc-study .side.b { color: var(--accent); }
+.lfc-study .question { margin-top: 12px; font-size: 32px; line-height: 1.15; font-weight: 700; letter-spacing: -.4px; }
+.lfc-study .divider { height: 1px; background: var(--glassHairline); margin: 26px 0; }
+.lfc-study .answer { margin-top: 8px; font-size: 26px; line-height: 31px; font-weight: 700; }
+.lfc-study .note { margin-top: 6px; font-size: 15px; line-height: 20px; color: var(--textSecondary); }
+
+/* GlassTextField */
+.lfc-field-input { display: flex; flex-direction: column; gap: 4px; padding: 12px 16px; border-radius: var(--radius-field); }
+.lfc-field-input label { font-size: 12px; line-height: 16px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: var(--textSecondary); }
+.lfc-field-input input, .lfc-field-input textarea { border: 0; padding: 0; background: transparent; color: var(--textPrimary); font: 400 17px/22px var(--font-sans); outline: none; resize: none; }
+.lfc-field-input input::placeholder { color: var(--textSecondary); }
+.lfc-field-input.error { box-shadow: inset 0 0 0 1.5px var(--destructive), var(--shadow-glass); }
+.lfc-field-input.error label, .lfc-field-input .message { color: var(--destructive); }
+.lfc-field-input .message { display: flex; gap: 4px; align-items: center; margin-top: 2px; font-size: 13px; line-height: 18px; font-weight: 600; }
+.lfc-field-input .message svg { width: 14px; height: 14px; }
+
+/* GlassSheetBar */
+.lfc-sheetbar { position: relative; display: flex; justify-content: space-between; align-items: center; }
+.lfc-sheetbar .title { position: absolute; left: 110px; right: 110px; text-align: center; font-size: 17px; line-height: 22px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lfc-sheetbar button { height: var(--sheetBarButtonHeight); padding: 0 16px; font-size: 16px; font-weight: 600; color: var(--textPrimary); border-radius: var(--radius-field); }
+.lfc-sheetbar button.confirm { padding: 0 18px; border: 0; font-weight: 700; background: var(--ctaFill); color: var(--textOnAccent); box-shadow: var(--shadow-cta); border-radius: var(--radius-pill); }
+.lfc-sheetbar button.confirm:disabled { opacity: var(--opacity-disabled); }
+
+/* GlassEmptyStateCard */
+.lfc-empty { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 28px 22px 22px; border-radius: var(--radius-hero); }
+.lfc-empty h2 { margin: 16px 0 0; font-size: 22px; line-height: 28px; font-weight: 700; }
+.lfc-empty p { margin: 6px 0 0; font-size: 15px; line-height: 20px; color: var(--textSecondary); }
+.lfc-empty .actions { margin-top: 20px; width: 100%; display: flex; flex-direction: column; gap: 10px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lfc-btn:active, .lfc-rating button:active { transform: none; opacity: var(--opacity-press-dim); }
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Glass Momentum Day · Card editor</title>
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;font-family:"Instrument Sans",-apple-system,system-ui,sans-serif;color:#1A2119;background:#F0F3EC}
+button{font:inherit;cursor:pointer}
+a{color:#2E5D3E}a:hover{color:#1F452D}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 844px; overflow: hidden; box-sizing: border-box; background: #F0F3EC; background-image: radial-gradient(circle at 10% 6%, #CFE3C8 0, rgba(207,227,200,0) 46%), radial-gradient(circle at 95% 30%, #EFE0BE 0, rgba(239,224,190,0) 44%), radial-gradient(circle at 25% 95%, #D3E5E2 0, rgba(211,229,226,0) 50%); color: #1A2119; padding: 24px 20px 0"><div style="display: flex; justify-content: space-between; align-items: center"><button style="height: 40px; padding: 0 16px; border-radius: 20px; background: rgba(255,255,255,0.54); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 10px 30px rgba(46,93,62,0.12); color: #1A2119; font-weight: 600">Cancel</button><span style="font-size: 17px; font-weight: 700">New card</span><button style="height: 40px; padding: 0 18px; border: 0; border-radius: 20px; background: rgba(46,93,62,0.9); color: #FFFFFF; box-shadow: 0 10px 24px rgba(46,93,62,0.28); font-weight: 700">Save</button></div>
+<div style="margin-top: 18px; display: flex; flex-direction: column; gap: 10px">
+<div style="padding: 12px 16px; border-radius: 20px; background: rgba(255,255,255,0.54); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 10px 30px rgba(46,93,62,0.12); "><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.8px; color: #576154">SIDE A</div><div style="font-size: 17px; margin-top: 4px; color: #1A2119">Femur</div></div>
+<div style="padding: 12px 16px; border-radius: 20px; background: rgba(255,255,255,0.54); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 10px 30px rgba(46,93,62,0.12); "><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.8px; color: #576154">SIDE B</div><div style="font-size: 17px; margin-top: 4px; color: #1A2119">Thigh bone</div></div>
+<div style="display: flex; gap: 10px"><div style="flex-grow: 1"><div style="padding: 12px 16px; border-radius: 20px; background: rgba(255,255,255,0.54); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 10px 30px rgba(46,93,62,0.12); "><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.8px; color: #576154">EXAMPLE</div><div style="font-size: 17px; margin-top: 4px; color: #1A2119">She fractured her femur skiing.</div></div></div></div>
+<div style="padding: 12px 16px; border-radius: 20px; background: rgba(255,255,255,0.54); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 10px 30px rgba(46,93,62,0.12); min-height: 70px;"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.8px; color: #576154">NOTES</div><div style="font-size: 17px; margin-top: 4px; color: #576154">Add a hint or mnemonic</div></div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 20px; background: rgba(255,255,255,0.54); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 10px 30px rgba(46,93,62,0.12)"><div style="width: 38px; height: 38px; border-radius: 12px; background: rgba(46,93,62,0.14); color: #2E5D3E; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="3"></rect><circle cx="9" cy="10" r="1.6"></circle><path d="M20 16l-5-5-8 8"></path></svg></div><div style="flex-grow: 1; font-weight: 600">Add image</div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#576154" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></div>
+</div>
+<div style="margin: 18px 4px 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; color: #576154">DECKS</div>
+<div style="display: flex; gap: 8px; flex-wrap: wrap"><span style="padding: 8px 14px; border-radius: 16px; ; background: #2E5D3E; color: #FFFFFF; font-weight: 600">Anatomy</span><span style="padding: 8px 14px; border-radius: 16px; background: rgba(255,255,255,0.54); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 10px 30px rgba(46,93,62,0.12); ; font-weight: 600">Basics</span><span style="padding: 8px 14px; border-radius: 16px; ; background: #2E5D3E; color: #FFFFFF; font-weight: 600">Science Terms</span></div>
+<button style="margin-top: 20px; width: 100%; height: 52px; border-radius: 26px; background: rgba(255,255,255,0.54); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 10px 30px rgba(46,93,62,0.12); color: #2E5D3E; font-size: 16px; font-weight: 700">Save &amp; add next</button></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview": {"width": 390, "height": 844}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

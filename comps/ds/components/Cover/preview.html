@@ -1,0 +1,56 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Liquid Flash Cards</title>
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--glassFieldBase); color:var(--textPrimary); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; width:960px; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; }
+  .plum { fill:var(--accent); }
+  .tint { fill:var(--controlPrimaryTint); }
+  .ink { fill:var(--textPrimary); }
+  .recall { fill:var(--recallAccent); }
+  .r-study { rx:var(--radius-study); }
+  .r-hero { rx:var(--radius-hero); }
+  .r-card { rx:var(--radius-card); }
+  .arc { fill:none; stroke-linecap:round; }
+  .arc.cut { stroke:var(--glassFieldBase); }
+  .arc.recall-arc { stroke:var(--recallAccent); }
+  .arc.plum-arc { stroke:var(--accent); }
+  .words { position:absolute; left:40px; bottom:36px; max-width:440px; }
+  .name { margin:0; font-size:64px; line-height:.95; font-weight:700; letter-spacing:-.02em; color:var(--textPrimary); }
+  .tag { margin:12px 0 0 2px; font-size:14px; line-height:20px; color:var(--textSecondary); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+  blocks      accent 184×250 slab bled off the top (the brand plum, largest) · controlPrimaryTint 152×232 bled off the bottom (the blush relief) · textPrimary 136×214 bled off the right (deep ink) · recallAccent 136×58 (the one second hue, small) — about 38% of 960×288
+  arrangement one tall plum slab with satellites, staggered: slab from the top, tint from the bottom, ink off the right edge with the recall block under it; 16px gutters (rowContentPadding)
+  pattern     arcs from the MomentumRings motif: "outer ring the goal, inner ring recall" — a 14px goal ring cut into the slab in glassFieldBase with a 10px recall arc inside it, and one 14px plum ring arc crossing the ink block
+  scales      gutters rowContentPadding 16; ring strokes 14 / 10 and radii 52 / 33 from momentumRingSize 124; corners radius-study 34 (slab), radius-hero 30 (tint, ink), radius-card 26 (recall)
+-->
+<rect class="plum r-study" x="0" y="-34" width="184" height="250" rx="34"/>
+<rect class="tint r-hero" x="200" y="86" width="152" height="232" rx="30"/>
+<rect class="ink r-hero" x="368" y="-30" width="136" height="214" rx="30"/>
+<rect class="recall r-card" x="368" y="200" width="136" height="58" rx="26"/>
+<!-- goal ring (60%) and recall ring (87%), centred on the slab -->
+<circle class="arc cut" cx="92" cy="110" r="52" stroke-width="14" stroke-dasharray="196 327" transform="rotate(-90 92 110)"/>
+<circle class="arc recall-arc" cx="92" cy="110" r="33" stroke-width="10" stroke-dasharray="180 207" transform="rotate(-90 92 110)"/>
+<!-- a goal arc crossing the ink block -->
+<circle class="arc plum-arc" cx="436" cy="92" r="52" stroke-width="14" stroke-dasharray="120 327" transform="rotate(90 436 92)"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Liquid<br>Flash Cards</h1>
+<p class="tag">Frosted glass on a plum field, and momentum you can see.</p>
+</div>
+</div>
+</body>
+</html>

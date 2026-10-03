@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkliquidflashcards_docs=self.webpackChunkliquidflashcards_docs||[]).push([[7089],{7089(s,c,e){e.d(c,{createArchitectureServices:()=>a.S});var a=e(5796);e(4954)}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkliquidflashcards_docs=self.webpackChunkliquidflashcards_docs||[]).push([[884],{884(s,e,a){a.d(e,{createTreemapServices:()=>c.d});var c=a(6527);a(4954)}}]);

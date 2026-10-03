@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkliquidflashcards_docs=self.webpackChunkliquidflashcards_docs||[]).push([[5233],{8795(s){s.exports=JSON.parse('{"tags":[{"label":"quality","permalink":"/liquidflashcards-docs/retest/tags/quality","count":1}]}')}}]);

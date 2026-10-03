@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkliquidflashcards_docs=self.webpackChunkliquidflashcards_docs||[]).push([[7903],{4707(s){s.exports=JSON.parse('{"tags":[{"label":"history","permalink":"/liquidflashcards-docs/history/tags/history","count":1}]}')}}]);

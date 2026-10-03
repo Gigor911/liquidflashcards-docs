@@ -1,0 +1,78 @@
+{
+  "v": 3,
+  "assetGroups": {
+    "Logos": {
+      "files": {
+        "app-icon-dark.png": {
+          "blob": "6e3eecc155a99a30dde1f7e6facd2adc",
+          "name": "app-icon-dark.png",
+          "size": 219871,
+          "type": "image/png"
+        },
+        "app-icon-mac.png": {
+          "blob": "fc93ba590347ffa031c0afe68b1f89e9",
+          "name": "app-icon-mac.png",
+          "size": 294204,
+          "type": "image/png"
+        },
+        "app-icon-tinted.png": {
+          "blob": "b73c721c58acb53e1b3a1d6272472c37",
+          "name": "app-icon-tinted.png",
+          "size": 70401,
+          "type": "image/png"
+        },
+        "app-icon.png": {
+          "blob": "1db2f47acfd4e4f381b7ff4289c7c283",
+          "name": "app-icon.png",
+          "size": 250278,
+          "type": "image/png"
+        },
+        "launch-logo-dark.png": {
+          "blob": "330ac7054b99782889528d319e14361d",
+          "name": "launch-logo-dark.png",
+          "size": 43660,
+          "type": "image/png"
+        },
+        "launch-logo.png": {
+          "blob": "6c25e15d6750dd429bee1654c7d1340c",
+          "name": "launch-logo.png",
+          "size": 59901,
+          "type": "image/png"
+        }
+      },
+      "name": "Logos",
+      "order": [
+        "app-icon.png",
+        "app-icon-dark.png",
+        "app-icon-tinted.png",
+        "app-icon-mac.png",
+        "launch-logo.png",
+        "launch-logo-dark.png"
+      ],
+      "tile": "m"
+    }
+  },
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-09-29T15:41:44Z",
+    "v": 1
+  },
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "groups": [
+    "Logos"
+  ],
+  "lastChange": {
+    "by": "Ihor",
+    "at": "2026-09-29T16:21:54Z",
+    "via": "Cowork \u00b7 Gigor911/LiquidFlashCards (LFC-167, uncommitted)",
+    "note": "Contrast fixes: textSecondary, recall, destructive (the comps' #A8323F), Good label darkened; textTertiary retired; palettes regenerated"
+  },
+  "layout": "files",
+  "libraries": [],
+  "namespace": "LFC",
+  "sections": {},
+  "title": "Liquid Flash Cards"
+}
